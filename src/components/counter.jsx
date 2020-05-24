@@ -10,14 +10,21 @@ class Counter extends Component {
   };
 
   render() {
+    console.log(this.props);
     return (
       <div style={{ flexDirection: "column" }}>
         <span className={this.getBadgeClasses()}>{this.formatValue()}</span>
         <button
           onClick={this.handleIncrement}
-          className="btn btn-secondary m-2"
+          className="btn btn-secondary btn-sm m-2"
         >
           Increment
+        </button>
+        <button
+          onClick={this.props.onDelete}
+          className="btn btn-danger btn-sm m-2"
+        >
+          delete
         </button>
       </div>
     );
